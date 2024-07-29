@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ /* Container to hold the page size */
+.page-container {
+  width: 21.59cm; /* 8.5 inches in cm */
+  height: 27.94cm; /* 11 inches in cm */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Padding around the edges */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  border: 1px solid #000; /* Optional border for visualization */
+}
+
+/* Table Styles */
+table {
+  width: 100%; /* Ensure tables take full width of the container */
+  border-collapse: collapse; /* Collapse borders */
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove padding */
+}
+.one {
+    border: 1px solid black; /* Adds a solid border with a light gray color */
+    color: blue;
+    padding: 10px; /* Adds padding inside the container */
+    height: -10px; /* Sets height automatically based on content, or specify a value */
+    width: 100%; /* Sets the width to 100% of the containing element */
+    text-align: center; /* Centers the text and any inline elements like images */
+    font-weight: bold;
+    font-size: 50;
+  }
+  .image {
+    max-width: 140px; /* Ensures the image doesn't exceed the width of its container */
+    height: 60px; /* Maintains the aspect ratio */
+  }
+
+    .image img {
+        max-width: 100%; /* Ensure the image fits within the container */
+        max-height: 100%; /* Ensure the image fits within the container */
+        height: auto; /* Maintain aspect ratio */
+        width: auto; /* Maintain aspect ratio */
+    }
+td, th {
+  border: 1px solid #000000; /* Border color */
+  text-align: center; /* Center text */
+}
+
+.r th {
+  font-size: 50px; /* Font size */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  width: 100%; /* Full width */
+  text-align: center; /* Center text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+
+.generated th {
+  font-size: 20px; /* Font size */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  height: 20px; /* Row height */
+  background-color: #f0f0f0; /* Background color */
+  text-align: left; /* Text alignment */
+  color: blue;
+  border-color: #000000;
+  width: 100%; /* Full width */
+}
+
+    /* Existing CSS */
+
+    .lerner-indent {
+        color: blue;
+        font-size: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-align: left;
+        font-weight: bold;
+        width: 100%;
+        position: relative; /* Relative positioning for child elements */
+    }
+
+    .lerner-indent th {
+        border: 1px solid black;
+        padding: 50px; /* Adjust padding as needed */
+    }
+    .learner-indent h3 {
+        margin: 0; /* Remove default margin */
+        padding-left: 100px; /* Align text properly */
+        text-align: left; /* Ensure text is aligned to the left */
+        font-weight: bold;
+    }
+
+
+    .imgbox {
+        border: 2px solid #000;
+        padding: 10px;
+        width: 170px; /* Width of the image box */
+        height: 100px; /* Height of the image box */
+        border-radius: 0; /* No rounded corners */
+        display: flex; /* Center the content */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        position: absolute; /* Absolute position to move the box freely */
+    }
+
+    .imgbox img {
+        max-width: 100%; /* Ensure the image fits within the container */
+        max-height: 100%; /* Ensure the image fits within the container */
+        height: auto; /* Maintain aspect ratio */
+        width: auto; /* Maintain aspect ratio */
+    }
+
+    /* Example positions */
+    .imgbox-position1 {
+        top: 6px; /* Adjust as needed */
+        left: 700px; /* Adjust as needed */
+    }
+
+.italic-text {
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+}
+
+
+.profile {
+  font-size: 20px; /* Font size */
+  padding: 10px; /* Padding */
+  height: auto; /* Height based on content */
+  background-color: #f0f0f0; /* Background color */
+  text-align: left; /* Text alignment */
+  color: blue;
+  border-color: #000000;
+}
+
+.my-table {
+  font-size: 20px; /* Font size */
+  padding: 10px; /* Padding */
+  height: auto; /* Height based on content */
+  background-color: #ffffff; /* Background color */
+  text-align: left; /* Text alignment */
+  color: rgb(0, 0, 0);
+  border-color: #000000;
+}
+
+.box1 {
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between boxes */
+  margin-top: -33px; /* Adjust vertical position */
+  position: relative; /* Allows positioning */
+  left: 0; /* Horizontal position */
+  width: 100%; /* Full width */
+  top: 0; /* Vertical position */
+}
+.uli {
+  background-color: #ffffff; /* Background color for the row */
+  font-size:15px; /* Font size for text in the row */
+  height:0px; /* Desired height for the row */
+  text-align: center;
+  position: relative; /* Establishes a containing block for absolutely positioned elements */
+}
+.left-aligns{
+  text-align: left;
+}
+
+
+
+
+.small-box {
+      width: 30px; /* Width of each small box */
+      height: 35px; /* Height of each small box */
+      background-color: #ffffff; /* Background color of each box */
+      border: 0.5px solid #000000; /* Change to desired border color */
+      display: flex; /* Use flexbox to center text */
+      justify-content: center; /* Center text horizontally */
+      align-items: center; /* Center text vertically */
+      font-size: 12px; /* Font size for the text inside the box */
+      margin-bottom: 29px; /* Adjust this value to move the box to the right */
+
+      
+    }
+    .small-boxs {
+      width: 15px; /* Width of each small box */
+      height: 35px; /* Height of each small box */
+      background-color: #ffffff; /* Background color of each box */
+      border: 0.5px solid #000000; /* Change to desired border color */
+      display: flex; /* Use flexbox to center text */
+      justify-content: center; /* Center text horizontally */
+      align-items: center; /* Center text vertically */
+      font-size: 12px; /* Font size for the text inside the box */
+      margin-bottom: 29px; /* Adjust this value to move the box to the right */
+
+      
+    }
+/* Container for the small boxes */
+.box-container {
+  display: flex; /* Enables flexbox layout */
+  flex-wrap: nowrap; /* Prevents wrapping of items */
+  justify-content: flex-start; /* Aligns items to the start of the container */
+  align-items: center; /* Aligns items vertically center */
+  height: 5px;
+  padding-left: 210px;
+
+}
+.date-row {
+  position: absolute; /* Allows positioning relative to the containing element */
+  top: 1px; /* Adjust to move the input box down from the top */
+  right: 10px; /* Adjust to move the input box left from the right edge */
+  padding: 5px; /* Adds padding around the input box */
+}
+
+.date-row input[type="text"] {
+  width: 150px; /* Set a specific width for the input field */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  height: 20px; /* Adjust height as needed */
+  padding: 15px; /* Adds padding inside the input box */
+  font-size: 20px; /* Adjust font size inside the input box */
+  text-align: center;
+}
+
+/* Specific table styling (if applying only to a specific table) */
+.my-table {
+        font-size: 20px; /* Smaller font size */
+        padding: 10px; /* Smaller padding */
+        height: 220px; /* Set height for the row */
+        background-color: #ffffff; /* Optional background color */
+        padding-left: 20px; /* Adjust the text position horizontally */
+        text-align: left; /* Align text to the left if needed */
+        color: rgb(0, 0, 0);
+        border-color: #000000;
+      }
+.item-container {
+  position: relative; /* Enable positioning of children */
+}
+
+.number {
+  position: absolute; /* Position independently */
+  background: #ffffff; /* Background color for visibility */
+  padding: 5px; /* Padding for spacing */
+  border: 1px solid #ffffff; /* Border for visibility */
+}
+
+.text {
+  position: absolute; /* Position independently */
+  padding: 5px; /* Padding for spacing */
+  background: #ffffff; /* Background color for visibility, adjust or remove as needed */
+  color: black; /* Change text color to black */
+  border: none; /* Remove border */
+  font-weight: bold;
+}
+
+
+/* Position the first number and text */
+#number1 {
+  top: -20px; /* Adjust top position */
+  left: 0; /* Adjust left position */
+  font-size: 10px;
+  color: black; /* Change text color to black */
+  border: none; /* Remove border */
+  background: #ffffff; /* Background color for visibility */
+}
+
+#text1 {
+  top: -28px; /* Align with the first number */
+  left: 30px; /* Adjust left position relative to the number */
+  font-size: 15px;
+}
+
+/* Position the second number and text */
+#number2 {
+  top: 30px; /* Adjust top position to be below the first item */
+  left: 0; /* Adjust left position */
+  font-size: 10px;
+  color: black; /* Change text color to black */
+  border: none; /* Remove border */
+  background: #ffffff; /* Background color for visibility */
+}
+
+#text2 {
+  top: 10px; /* Align with the first number */
+  left: 30px; /* Adjust left position relative to the number */
+  text-align: left; /* Ensure text is aligned to the left */
+  font-size: 15px;
+}
+
+.box1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 4 columns */
+  gap: 20px; /* Space between boxes */
+  margin-top: -33px;
+  position: relative; /* Allows movement using left/right properties */
+  left:230px; /* Move the container 50px to the right. Adjust as needed */
+  width: 805px;
+  top: -0.5px;
+}
+
+.box {
+  background: #ffffff; /* Background color for boxes */
+  padding: 5px; /* Padding inside each box */
+  border: 1px solid black; /* Border for visibility */
+  text-align: center; /* Center text horizontally */
+  height: 20px; /* Height of each box */
+  
+}
+
+.box3 {
+  background: #ffffff; /* Background color for boxes */
+  padding: 5px; /* Padding inside each box */
+  border: 1px solid black; /* Border for visibility */
+  text-align: center; /* Center text horizontally */
+  height: 20px; /* Height of each box */
+  width: 150px;
+  
+}
+.PersonalInfo th {
+  font-size: 20px; /* Font size */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+  height: 20px; /* Row height */
+  background-color: #f0f0f0; /* Background color */
+  text-align: left; /* Text alignment */
+  color: blue;
+  border-color: #000000;
+  width: 100%; /* Full width */
+}
+
+
+.sexbox{
+  height: 200px
+}
+
+
+
+.positioned-container {
+  position: relative; /* Ensure this is set */
+}
+
+
+.letter1 {
+  position: absolute; /* Enable absolute positioning */
+  top: -100px; /* Align with the first number */
+  left: 10px; /* Adjust left position relative to the number */
+  width: 100px;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+.letter2 {
+  position: absolute; /* Enable absolute positioning */
+  top: -100px; /* Align with the second number */
+  left: 250px; /* Adjust left position relative to the number */
+  width: 100px;
+  text-align: left; /* Ensure text is aligned to the left */
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+.letter3 {
+  position: absolute; /* Enable absolute positioning */
+  top: -100px; /* Align with the third number */
+  left: 640px; /* Adjust left position relative to the number */
+  width: 300px;
+  text-align: left; /* Ensure text is aligned to the left */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+.target-td {
+    text-align: center; /* Center-aligns the contents of the <td> */
+    vertical-align: middle; /* Ensures vertical alignment if needed */
+  }
+
+  .asd {
+    position: relative;
+    left: 85px;
+   
+    
+  }
+
+  .asd label {
+    display: flex;
+    align-items: center; /* Vertically centers label text with checkbox */
+    gap: 5px; /* Adds space between checkbox and label text */
+  }
+.centered-content td{
+  text-align: center; /* Center-aligns the contents of the <td> */
+    vertical-align: middle; /* Ensures vertical alignment if needed */
+   
+}
+.centered-content label{
+  display: flex;
+    align-items: center; /* Vertically centers label text with checkbox */
+    gap: 5px; /* Adds space between checkbox and label text */
+}
+
+
+</style>
+</head>
+<body>
+<table class="one">
+  <tr>
+    <td class="image"> <img src="TESDA-Logo.png" alt="Logo" class="logo"></td>
+    <td>Technical Education and Skills Development Authority<br class="br">Pangasiwaan sa Edukasyong Teknikal at Pagpapaunlad ng Kasanayan</td>
+    <td><p class="italic-text">MIS 03 - 01<br>(ver.2018)</p></td>
+  </tr>
+</table>
+<table class="r">
+  <tr>
+      <th>Registration Form</th>
+  </tr>
+</table>
+
+
+<table class="lerner-indent">
+  <tr>
+    <th colspan="2" class="learner-indent">
+      <!-- Use imgbox-left or imgbox-right to control the position -->
+      <div class="imgbox imgbox-position1">
+      </div>
+      <h3 class="left-align">LEARNERS PROFILE FORM</h3>
+    </th>
+  </tr>
+</table>
+
+
+ <table>
+    <tr class="generated">
+      <th>1. T2MIS Auto Generated</th>
+  </tr>
+</table>
+
+<table class="uli">
+  <tr>
+    <th class="left-aligns">
+      1.1. Unique Learner Identifier<br>(ULI) Number:
+
+      <div class="box-container">
+        <div class="small-box">1</div>
+        <div class="small-box">2</div>
+        <div class="small-box">3</div>
+        <div class="small-box">4</div>
+        <div class="small-box">5</div>
+        <div class="small-box">6</div>
+        <div class="small-box">7</div>
+        <div class="small-box">8</div>
+        <div class="small-box">9</div>
+        <div class="small-box">10</div>
+        <div class="small-boxs">-</div>
+        <div class="small-box">12</div>
+        <div class="small-box">13</div>
+        <div class="small-box">14</div>
+      </div>
+      <!-- Correctly place the date row and its content -->
+      <div class="date-row">
+        1.2 Entry Date: <input type="text" placeholder="mm/dd/yy" name="entry_date" id="entry_date">
+      </div>
+    </th>
+  </tr>
+</table>
+
+
+<table>
+  <tr class="profile">
+    <th class="left-aligns">2. Learner/Manpower Profile</th>
+  </tr>
+</table>
+
+
+<table>
+  <tr class="my-table">
+    <td>
+      <div class="item-container">
+        <div class="number" id="number1">2.1.</div>
+        <div class="text" id="text1">Name:</div>
+        
+        <div class="number" id="number2">2.2.</div>
+        <div class="text" id="text2">Complete<br>Permanent Mailing<br> Address:</div>
+      </div>
+
+      <div class="box1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box3">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box3">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box3">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box3">12</div>
+
+
+      </div>
+    </td>
+  </tr>
+  <table>
+    <tr class="PersonalInfo">
+      <th class="left-aligns">3. Personal Information</th>
+  </table>
+
+  <table>
+    <tr class="sexbox">
+        <td>
+          <div class="positioned-container">
+            <div class="letter1">3.1 Sex:</div>
+            <div class="letter2">3.2 Civil Status</div>
+            <div class="letter3">3.3 Employment Status (before the training)</div>
+          </div>
+          
+            
+          <div class="centered-content">
+            <input type="checkbox" id="male1" name="sex1" value="male">
+            <label for="male1">Male</label><br>
+            <input type="checkbox" id="female1" name="sex1" value="female">
+            <label for="female1">Female</label>
+          </div>
+
+          <td class="target-td">
+            <div class="asd">
+              <label>
+                <input type="checkbox" id="male2" name="sex2" value="male">
+                Single
+              </label>
+              <label>
+                <input type="checkbox" id="male3" name="sex2" value="male">
+                Married
+              </label>
+              <label>
+                <input type="checkbox" id="female2" name="sex2" value="female">
+                Widow/er
+              </label>
+              <label>
+                <input type="checkbox" id="male4" name="sex2" value="male">
+                Separated
+              </label>
+              <label>
+                <input type="checkbox" id="female3" name="sex2" value="female">
+                Solo Parent
+              </label>
+            </div>
+          </td>
+        <td>
+          <div>
+            <input type="checkbox" id="male3" name="sex3" value="male">
+            <label for="male3">Employed</label><br>
+            <input type="checkbox" id="female3" name="sex3" value="female">
+            <label for="female3">Unemployed</label>
+          </div>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
